@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 10px;
+}
+h1,
+h2 {
+  text-align: center;
+  font-size: 34px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  color: rgb(89, 89, 214);
+}
+#loginForm > form > input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+}
+.container {
+  max-width: 400px;
+  margin: auto;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3fN3AF_fd01uO3NOwdShwHDPEeCvPGs0tpA&s);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 10px 30px 20px rgba(0, 0, 0, 0.1);
+}
+#profileTabs {
+  width: 100%;
+  word-spacing: 10px;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+}
+#main-heading {
+  color: black;
+  font-family: Courier, monospace;
+  font-style: oblique;
+}
+.tablink {
+  background-color: rgb(151, 196, 197);
+  color: white;
+  margin: auto;
+  padding: 15px;
+  cursor: pointer;
+}
+.tablink:hover {
+  background-color: black;
+  text-shadow: none;
+  color: aquamarine;
+}
+.tabcontent {
+  display: none;
+  color: #f4f4f4;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+}
+h3 {
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  color: #ccc;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+}
+#btn {
+  margin-top: 10%;
+  border-radius: 20px;
+  background-color: crimson;
+  color: antiquewhite;
+  margin-left: 23%;
+}
+#btn-2 {
+  display: inline;
+  margin: auto;
+  margin-left: 22%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: rgb(186, 255, 255);
+  color: black;
+  font-weight: 700;
+}
+#btn-2:hover {
+  text-shadow: none;
+  background-color: orange;
+  color: azure;
+  transition: 2s;
+  transform: skewY(20deg);
+}
+#btn:hover {
+  background-color: black;
+  color: #f4f4f4;
+  font-size: 26px;
+  text-shadow: none;
+}
+button {
+  width: 50%;
+  padding: 15px;
+  margin-left: 20%;
+  color: black;
+  border: none;
+  font-size: 26px;
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  color: #ccc;
+  text-shadow: 5px 4px 4px;
+}

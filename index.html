@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Sign Up</title>
+        <link rel="stylesheet" href="styles.css" />
+      </head>
+      <body>
+        <h1 id="main-heading">Sign Up Page Design By Touseef</h1>
+        <div class="container">
+          <h1>User Sign Up</h1>
+          <div id="signUpForm">
+            <h2 id="head">Sign Up</h2>
+            <form onsubmit="signUp(event)">
+              <h3>Name:</h3>
+              <input type="text" id="signUpName" required />
+              <h3>Email:</h3>
+              <input type="email" id="signUpEmail" required />
+              <h3>Password:</h3>
+              <input type="password" id="signUpPassword" required />
+              <br />
+              <br />
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
+          <div id="loginForm" style="display: none">
+            <h2>Log In</h2>
+            <form onsubmit="logIn(event)">
+              <h3>Email:</h3>
+              <input type="email" id="loginEmail" required />
+              <h3>Password:</h3>
+              <input type="password" id="loginPassword" required />
+              <button type="submit" id="btn">Log In</button>
+            </form>
+          </div>
+          <div id="profileTabs" style="display: none">
+            <div class="tabs">
+              <button class="tablink" onclick="openTab(event, 'Employee')">
+                Employee
+              </button>
+              <button class="tablink" onclick="openTab(event, 'Admin')">
+                Admin
+              </button>
+              <button class="tablink" onclick="openTab(event, 'Profile')">
+                Profile
+              </button>
+            </div>
+            <div class="tabcontent">
+              <h2>Employee Information</h2>
+              <div id="employeeInfo"></div>
+              <button onclick="openTab(event, 'Profile')">View Profile</button>
+            </div>
+            <div class="tabcontent" style="display: none">
+              <h2>Admin Information</h2>
+              <div id="adminInfo"></div>
+              <button onclick="openTab(event, 'Profile')">View Profile</button>
+            </div>
+            <div class="tabcontent" style="display: none">
+              <h2>User Profile</h2>
+              <div id="profileInfo"></div>
+              <button onclick="openTab(event, 'Employee')" id="btn-2">
+                Back to Employee
+              </button>
+              <br />
+              <br />
+              <button onclick="openTab(event, 'Admin')" id="btn-2">
+                Back to Admin Info
+              </button>
+            </div>
+          </div>
+        </div>
+        <script>
+          let userInfo = {};
+
+          function signUp(event) {
+            event.preventDefault();
+            userInfo.name = document.getElementById("signUpName").value;
+            userInfo.email = document.getElementById("signUpEmail").value;
+            userInfo.password = document.getElementById("signUpPassword").value;
+            document.getElementById("signUpForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+          }
+          function logIn(event) {
+            event.preventDefault();
+            const loginEmail = document.getElementById("loginEmail").value;
+            const loginPassword =
+              document.getElementById("loginPassword").value;
+
+            if (
+              loginEmail === userInfo.email &&
+              loginPassword === userInfo.password
+            ) {
+              document.getElementById("loginForm").style.display = "none";
+              document.getElementById("profileTabs").style.display = "block";
+              document.getElementById("employeeInfo").innerHTML = `
+                    <p>Name: ${userInfo.name}</p>
+                    <p>Email: ${userInfo.email}</p>
+                    <p>Role: Employee</p>
+                `;
+              openTab(event, "Profile");
+            } else {
+              alert("Invalid credentials. Please try again.");
+            }
+          }
+
+          function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(
+                " active",
+                ""
+              );
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
